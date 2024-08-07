@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>자습 테이블연습</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 10px;
+        }
+
+        caption {
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        th {
+            text-align: center;
+            font-weight: bolder;
+            padding: 5px;
+        }
+        th, td {
+            border: solid 1px;
+            padding: 5px 10px 5px 10px;
+            text-align: center;
+        }
+        .division{
+            background-color:#8FBC8F;
+        }
+        tfoot{
+            background-color: white
+        }
+        tfoot tr{
+            font-size: 13px;
+            text-align: center;
+        }
+        .title{
+            background-color:#F5DEB3;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <caption>우도입도 총괄요금표</caption>
+    <colgroup>
+        <col class="division">
+        <col span="3">
+    </colgroup>
+
+    <thead>
+    <tr>
+        <th rowspan="2" scope="rowgroup">구분</th>
+        <th colspan="3" class="title" scope="colgroup">우도입도 총괄요금표</th>
+    </tr>
+    <tr>
+        <th scope="col">선박요금</th>
+        <th scope="col">도립공원입장료</th>
+        <th scope="col">터미널이용료</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">성인</th>
+        <td>2,000원</td>
+        <td>1,000원</td>
+        <td>500원</td>
+    </tr>
+    <tr>
+        <th scope="row">중학생이상</th>
+        <td>2,000원</td>
+        <td>800원</td>
+        <td>300원</td>
+    </tr>
+    <tr>
+        <th scope="row">초등학생</th>
+        <td>700원</td>
+        <td>500원</td>
+        <td>300원</td>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="4" >*이륜차(오토바이,자전거) 및 화물차량은 별도 문의</td></tr>
+    </tfoot>
+</table>
+</body>
+</html>
