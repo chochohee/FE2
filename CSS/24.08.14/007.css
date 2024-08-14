@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&family=Dongle&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nanum+Brush+Script&family=Nanum+Pen+Script&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@font-face {
+    font-family: 'YESMyoungjo-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YESMyoungjo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2{
+    font-family: "Nanum Brush Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+h3{
+    font-family: 'YESMyoungjo-Regular';
+
+}
