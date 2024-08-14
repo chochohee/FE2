@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        ol{
+            /* li 앞의 마커모양 */
+            list-style-type: disc;
+            list-style-type: circle;
+            /* 들여쓰기 */
+            list-style-position: inside;
+            /* 들여쓰기 기본값 */
+            list-style-position: outside;
+            /* 원하는 이미지로 마커모양 변경 */
+            list-style-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' height='20' width='20' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'><polyline points='20 6 9 17 4 12'></polyline></svg>");
+        }
+
+        ul{
+            /* 마커모양 none */
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li::before{
+            content: "🎈";
+        }
+    </style>
+</head>
+<body>
+<ol>
+    <li>리스트</li>
+    <li>리스트</li>
+    <li>리스트</li>
+    <li>리스트</li>
+</ol>
+
+<ul>
+    <li>리스트</li>
+    <li>리스트</li>
+    <li>리스트</li>
+    <li>리스트</li>
+</ul>
+
+</body>
+</html>
