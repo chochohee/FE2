@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+        border: 2px solid black;
+      }
+
+      .hidden {
+        overflow: hidden;
+      }
+
+      .scroll {
+        overflow: scroll;
+      }
+
+      .auto {
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 기본값 -->
+    <div class="visible">
+      <h2>visible</h2>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium,
+      autem magnam nulla architecto odit molestiae rerum excepturi, quia facilis
+      sequi, deserunt aliquid? Ullam atque illo voluptates dolorem earum? Velit,
+      aperiam?
+    </div>
+    <!-- 요소 밖으로 넘치는 컨텐츠를 안보이게 -->
+    <div class="hidden">
+      <h2>hidden</h2>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium,
+      autem magnam nulla architecto odit molestiae rerum excepturi, quia facilis
+      sequi, deserunt aliquid? Ullam atque illo voluptates dolorem earum? Velit,
+      aperiam?
+    </div>
+    <!-- 요소 밖으로 넘치는 컨텐츠를 스크롤을 통해 볼 수 있도록 -->
+    <div class="scroll">
+      <h2>scroll</h2>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium,
+      autem magnam nulla architecto odit molestiae rerum excepturi, quia facilis
+      sequi, deserunt aliquid? Ullam atque illo voluptates dolorem earum? Velit,
+      aperiam?
+    </div>
+    <!-- 요소 밖으로 넘치는 컨텐츠가 있는 경우에만 스크롤 추가 -->
+    <div class="auto">
+      <h2>auto</h2>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+
+    <div class="auto">
+      <h2>auto</h2>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium,
+      autem magnam nulla architecto odit molestiae rerum excepturi, quia facilis
+      sequi, deserunt aliquid? Ullam atque illo voluptates dolorem earum? Velit,
+      aperiam?
+    </div>
+  </body>
+</html>
