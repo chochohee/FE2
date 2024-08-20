@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    <style>
+      p {
+        background-color: aqua;
+        display: inline;
+        /* inline요소처럼 보이게 바꾸어서 width값이 적용이 안됨 */
+        width: 200px;
+      }
+
+      span {
+        background-color: yellow;
+        display: block;
+      }
+      em {
+        background-color: orange;
+        display: inline-block;
+        width: 200px;
+      }
+
+      div{
+        width: 300px;
+        height: 300px;
+        background-color: gray;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <p>p</p>
+    <p>p</p>
+    <p>p</p>
+    <span>span</span><span>span</span><span>span</span><em>em</em><em>em</em
+    ><em>em</em>
+    <div></div>
+  </body>
+</html>
