@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>카드UI만들기</title>
+    <style>
+      :root {
+        --title-color: #29363d;
+        --text-color: #5a6a72;
+      }
+      section {
+        position: relative;
+        display: inline-block;
+      }
+
+      button{
+        cursor: pointer;
+        background: none;
+        border: none;
+      }
+      .sample1 {
+        position: absolute;
+        top: 46px;
+        left: 63px;
+        width: 288px;
+        height: 348px;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      }
+
+      .sample1 div img {
+        width: 288px;
+        height: 196px;
+        border-radius: 8px 8px 0 0;
+      }
+
+      .text-container {
+        position: relative;
+        left: 16px;
+      }
+
+      .title {
+        width: 200px;
+        height: 20px;
+        color: var(--title-color);
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 16px;
+      }
+
+      .text {
+        width: 256px;
+        height: 40px;
+        overflow: hidden;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 19.2px;
+        color: var(--text-color);
+      }
+
+      .Read {
+        text-decoration: underline;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 16.8px;
+      }
+
+      .sample2 {
+        position: absolute;
+        left: 378px;
+        top: 46px;
+        width: 288px;
+        height: 374px;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      }
+
+      .title-container2 {
+        display: flex;
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        width: 256px;
+        height: 40px;
+
+        margin: 0;
+      }
+
+      .title-container2 img {
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+      }
+
+      .title-text2 {
+        position: relative;
+        left: 16px;
+        width: 200px;
+        height: 34px;
+      }
+
+      .title2 {
+        position: relative;
+        top: 3px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 19.2px;
+        margin: 0;
+      }
+
+      .name {
+        position: relative;
+        margin: 0;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14.4px;
+        color: var(--text-color);
+      }
+
+      .main2 {
+        position: absolute;
+        top: 68px;
+      }
+
+      .main2 img {
+        width: 288px;
+        height: 196px;
+      }
+
+      .text-container2 {
+        width: 256px;
+        height: 84px;
+        position: absolute;
+        bottom: 16px;
+        left: 16px;
+        margin: 0;
+      }
+
+      .text2 {
+        width: 256px;
+        height: 40px;
+        overflow: hidden;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 19.2px;
+        color: var(--text-color);
+        margin: 0;
+      }
+
+      .Read2 {
+        cursor: pointer;
+        background: none;
+        border: none;
+        width: 70px;
+        height: 24px;
+        position: relative;
+        bottom: 0;
+        margin: 0;
+      }
+
+      .card-buttons{
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        display: flex;
+        width: 256px;
+        height: 32px;
+      }
+
+      .buttons_wrap{
+        width: 112px;
+        height: 32px;
+        position: absolute;
+        right: 0px;
+      }
+      .card-buttons span{
+        width: 32px;
+        height: 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="sample1">
+      <div>
+        <img src="../src/24.08.21/카드UI/이미지.svg" alt="" />
+      </div>
+      <div class="text-container">
+        <p class="title">그것을 피가 청춘을 것이다</p>
+        <p class="text">
+          청춘의 하였으며, 이것은 몸이 때문이다. 사는가 고동을 용기가 충분히
+          청춘 것이다. 얼마나 반짝이는 소담스...운 열락의 아름다우냐? 가지에
+          같지 청춘의 옷을 목숨을 피어나기 오직 군영과 칼이다. 거친 끓는 예가
+          뿐이다. 방지하는 꽃이 청춘을 생명을 이것이다. 인간의 거선의 피고,
+          모래뿐일 작고 우리 평화스러운 있는가?
+        </p>
+        <button class="Read">Read</button>
+      </div>
+    </section>
+
+    <section class="sample2">
+      <div class="title-container2">
+        <img src="../src/24.08.21/카드UI/profile.svg" alt="" />
+        <span class="title-text2">
+          <p class="title2">그것을 피가 청춘을 것이다</p>
+          <p class="name">secondary</p>
+        </span>
+      </div>
+      <div class="main2">
+        <img src="../src/24.08.21/카드UI/이미지.svg" alt="" />
+      </div>
+      <div class="text-container2">
+        <p class="text2">
+          청춘의 하였으며, 이것은 몸이 때문이다. 사는가 고동을 용기가 충분히
+          청춘 것이다. 얼마나 반짝이는 소담스...운 열락의 아름다우냐? 가지에
+          같지 청춘의 옷을 목숨을 피어나기 오직 군영과 칼이다. 거친 끓는 예가
+          뿐이다. 방지하는 꽃이 청춘을 생명을 이것이다. 인간의 거선의 피고,
+          모래뿐일 작고 우리 평화스러운 있는가?
+        </p>
+        <div class="card-buttons">
+          <button>
+            <span class="Read">Read</span><span class="arrow">&nbsp;&nbsp;&nbsp;&nbsp;<img src="../src/24.08.21/카드UI/arrow.svg" alt=""></span>
+          </button>
+          <div class="buttons_wrap">
+          <span><img src="../src/24.08.21/카드UI/favorite.svg" alt="" /></span>
+          <span><img src="../src/24.08.21/카드UI/share.svg" alt="" /></span>
+          <span>
+            <img src="../src/24.08.21/카드UI/more_vertical.svg" alt="" />
+          </span>
+        </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
