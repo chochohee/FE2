@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        body{
+            height: 200vh;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+        }
+
+        .parent{
+            background-color: antiquewhite;
+            /* 요소가 원래 있어야하는 위치를 기준으로 상대적으로 위치 조정 */
+            position: relative;
+            top: 100px;
+            left: 100px;
+            height: 500px;
+        }
+
+        .absolute{
+            /* 조상요소 중 position(static제외)값을 가지고 있는 요소를 기준으로 절대적으로 이동*/
+            /* 해당 요소가 없다면 body기준 */
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+
+        .fixed{
+            /* 뷰포트를 기준으로 고정된위치에 배치 */
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+        }
+        
+        /* 부모요소에 높이값이 있어야함
+        스크롤을 했을때 상단에 달라붙는다 */
+        .sticky{
+            position: sticky;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    <div class="box absolute">absolute</div>
+    <div class="box fixed">fixed</div>
+
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste corrupti animi natus eius perferendis ipsum sit adipisci reiciendis dolorem autem, facilis quasi accusantium! Consequuntur aut exercitationem harum sapiente at obcaecati!
+    <div class="box sticky">sticky</div>
+</div>
+</body>
+</html>
