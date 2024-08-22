@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    <style>
+      .container {
+        height: 100vh;
+        background-color: #eee;
+
+        /* 유연한 레이아웃을 위한 flex */
+        /* 1차원적 레이아웃(행or열) 설정*/
+        /* 요소들의 크기와 순서를 동적으로 조절 */
+        display: flex;
+        /* 기본값 왼쪽에서 오른쪽 (주축이 행)*/
+        flex-direction: row;
+        /* 오른쪽에서 왼쪽 */
+        flex-direction: row-reverse;
+        /* 위에서 아래방향 (주축이 열)*/
+        flex-direction: column;
+        /* 아래에서 위 방향 */
+        flex-direction: column-reverse;
+
+        /* 주축기준 아이템 정렬 */
+        /* 기본값. 시작점에 정렬 */
+        justify-content: flex-start;
+        /* 끝점에 정렬 */
+        justify-content: flex-end;
+        /* 가운데정렬 */
+        justify-content: center;
+        /* 아이템 사이에 동일한 간격 설정 */
+        justify-content: space-between;
+        /* 아이템 주변에 동일한 간격 설정 */
+        justify-content: space-around;
+        /* 아이템 주변과 시작/끝에 동일한 간격 설정 */
+        justify-content: space-evenly;
+
+        /* 교차축을 기준으로 정렬 */
+        /* 기본값. 교차출을 채우기위해 아이템을 늘린다 */
+        align-items: stretch;
+        /* 시작점에 정렬 */
+        align-items: flex-start;
+        /* 끝점에 정렬 */
+        align-items: flex-end;
+        /* 가운데 정렬 */
+        align-items: center;
+        /* 텍스트의 기준선에 정렬 */
+        align-items: baseline;
+      }
+
+      .item {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+
+        color: #fff;
+        font-weight: bold;
+        font-size: 32px;
+      }
+
+      .item:nth-child(odd) {
+        background-color: coral;
+      }
+
+      .item:nth-child(even) {
+        background-color: royalblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <!-- <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div> -->
+    </div>
+  </body>
+</html>
