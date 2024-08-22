@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    <style>
+      /* float : 요소를 페이지의 일반적인 레이아웃 흐름에서 벗어나게 하여,
+        텍스트나 다른 인라인요소들이 그 주위를 감싸도록 만드는 레이아웃기술 */
+      img {
+        float: right;
+      }
+
+      span {
+        float: left;
+        background-color: aqua;
+        margin: 20px;
+      }
+
+      p {
+        clear: both;
+      }
+
+      .parent {
+        background-color: yellow;
+
+        /* 모든 자식요소가 float 속성을 가질 때 부모요소는 자식요소의
+        높이를 인식 못함 */
+
+        /* 1. 부모값에 높이 부여(유연성이 떨어짐) */
+        /* height: 100px; */
+
+        /* 2. overflow:hidden */
+        /* overflow: hidden; */
+      }
+
+      /* 3. clearfix (가장 널리 사용되는방법) */
+      .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <span>hello world</span>
+    <img src="http://placehold.it/200x150" alt="" />
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi non
+      accusamus inventore quae, ratione ipsam, officia modi necessitatibus
+      similique quaerat animi, dolore labore distinctio corrupti! Incidunt vitae
+      voluptatibus corrupti ipsam?Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Magni sed officiis, ab accusantium distinctio
+      reprehenderit ducimus ad corporis adipisci cum quod nihil asperiores
+      minima quia cumque sapiente laboriosam minus ipsa?
+    </p>
+
+    <div class="parent clearfix">
+      <span>hello world</span>
+      <img src="http://placehold.it/200x150" alt="" />
+      <img src="http://placehold.it/200x150" alt="" />
+      <img src="http://placehold.it/200x150" alt="" />
+      <img src="http://placehold.it/200x150" alt="" />
+    </div>
+  </body>
+</html>
