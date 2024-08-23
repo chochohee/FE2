@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>float실습</title>
+    <style>
+      header, footer, section, aside{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .wrap{
+        background-color: steelblue;
+        padding: 20px;
+        text-align: center;
+      }
+
+      header,
+      footer {
+        background-color: skyblue;
+        color: white;
+        height: 10vw;
+        width: auto;
+      }
+
+      footer{
+        margin-top: 40px;
+      }
+
+      main {
+        height: 40vw;
+      }
+
+      section {
+        background-color: darkblue;
+        color: white;
+
+        float: left;
+        width: calc(70% - 20px);
+        margin: 20px 0;
+        height: 100%;
+      }
+
+      aside {
+        background-color: yellowgreen;
+
+        float: right;
+        width: 30%;
+        height: 100%;
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>header</header>
+      <main>
+        <section>sction</section>
+        <aside>aside</aside>
+      </main>
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>
