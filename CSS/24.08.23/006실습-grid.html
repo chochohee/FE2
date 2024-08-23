@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid</title>
+    <style>
+      /* header, footer, section, aside{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      .wrap {
+        background-color: steelblue;
+        padding: 10px;
+      }
+
+      header,
+      footer {
+        height: 10vw;
+        background-color: skyblue;
+        color: white;        
+      }
+
+      header{
+        margin-bottom: 10px;
+      }
+
+      main{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+      }
+      section {
+        background-color: darkblue;
+        color: white;
+        grid-column: 1 / 3;
+        height: 40vw;
+      }
+
+      aside {
+        background-color: yellowgreen;
+        grid-column: 3 / 4;
+      }
+
+      footer{
+        margin-top: 10px;
+      }
+ */
+        /* areas */
+      header, footer, section, aside{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      .wrap {
+        background-color: steelblue;
+        padding: 10px;
+      }
+
+      header,
+      footer {
+        height: 10vw;
+        background-color: skyblue;
+        color: white;
+      }
+
+      header{
+        margin-bottom: 10px;
+
+      }
+
+      main{
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas:
+        "section aside";
+        grid-gap: 10px;
+
+        height: 40vw;
+
+      }
+      section {
+        background-color: darkblue;
+        color: white;
+        grid-area: section;
+
+      }
+
+      aside {
+        background-color: yellowgreen;
+        grid-area: aside;
+
+      }
+
+      footer{
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>header</header>
+      <main>
+        <section>section</section>
+        <aside>aside</aside>
+      </main>
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>
