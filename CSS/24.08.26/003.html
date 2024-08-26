@@ -25,41 +25,41 @@
       }
 
       .item2 {
-        <!-- transform적용에 걸리는시간 -->
+        /* transform적용에 걸리는시간 */
         transition-duration: 3s;
-        <!-- 명시한 내용만 duration시간에 맞춰서 변화함 -->
+        /* 명시한 내용만 duration시간에 맞춰서 변화함 */
         transition-property: background-color;
       }
 
-      .container div:not([class='item2']){
+      .container div:not([class="item2"]) {
         transition-duration: 2s;
       }
 
-      .item3{
+      .item3 {
         transition-timing-function: ease;
       }
-      .item4{
+      .item4 {
         transition-timing-function: linear;
       }
-      .item5{
+      .item5 {
         transition-timing-function: ease-in;
       }
-      .item6{
+      .item6 {
         transition-timing-function: ease-out;
       }
-      .item7{
+      .item7 {
         transition-timing-function: ease-in-out;
       }
 
-      .item8{
-        transition-timing-function: cubic-bezier(0.9,-0.17, 0.32, 1.28);
+      .item8 {
+        transition-timing-function: cubic-bezier(0.9, -0.17, 0.32, 1.28);
       }
 
-      .item9{
+      .item9 {
         transition-timing-function: steps(5, end);
       }
 
-      .item10{
+      .item10 {
         transition-delay: -1s;
       }
     </style>
