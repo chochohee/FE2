@@ -27,14 +27,18 @@
       }
 
       .item1:hover {
+        /*translate() : 요소를 현재 위치에서 지정된 거리만큼 이동시킨다*/
+        /*오른쪽으로 50px 아래로 50px이동*/
         transform: translate(50px, 50px);
       }
 
       .item2:hover {
+        /*50px만큼 오른쪽으로 이동*/
         transform: translateX(50px);
       }
 
       .item3:hover {
+        /*아래로 50px이동*/
         transform: translateY(50px);
       }
 
@@ -45,6 +49,8 @@
       .box4 > .item4:hover {
         width: 50px;
         height: 50px;
+
+        /*absolute와 transform을 이용한 중앙정렬*/
         position: absolute;
         top: 50%;
         left: 50%;
@@ -52,54 +58,70 @@
       }
 
       .item5:hover {
+        /*scale() : 요소의 크기를 조절한다.
+        scale()은 요소의 내용물(텍스트 등)도 함께 확대/축소 한다.*/
+        /*가로와 세로 모두 2배로 확대*/
         transform: scale(2);
       }
 
       .item6:hover {
+        /*가로/세로 절반크기로 축소*/
         transform: scale(0.5);
       }
 
       .item7:hover {
+        /*가로 2배, 세로 유지*/
         transform: scale(2, 1);
       }
 
       .item8:hover {
+        /*요소를 지정된 각도만큼 회전시킨다*/
         /* 양수값 : 시계방향 */
-        /* deg : 도 */
+        /* 시계방향으로 45도*/
         transform: rotate(45deg);
       }
 
       .item9:hover {
         /* 음수값 : 반시계방향 */
+        /*반시계방향으로 45도*/
         transform: rotate(-45deg);
       }
 
-      .item10:hover{
-        <!-- turn : 회전 -->
+      .item10:hover {
+        /*시계방향으로 반바퀴(180도) 회전*/
         transform: rotate(0.5turn);
       }
 
-      .item11:hover{
-        /* 요소를 X나 Y축 기준으로 기울인다 */
+      .item11:hover {
+        /* skew() : 요소를 X나 Y축 기준으로 기울인다 */
+        /*X축을 기준으로 30도 기울임*/
         transform: skew(30deg);
+        /*X축을 기준으로만 45도 기울임*/
         transform: skewX(45deg);
       }
 
-      .item12:hover{
+      .item12:hover {
+        /*X축을 기준으로 20도, Y축을 기준으로 10도 기울임*/
         transform: skew(30deg, 10deg);
       }
 
-      .item13:hover{
-        transform: skewX(30deg);
+      .item13:hover {
+        /*Y축을 기준으로 -30도 기울임*/
+        transform: skewY(-30deg);
       }
 
-      .item14:hover{
+      .item14:hover {
         transform: rotate(0.5turn);
+        /*transform-origin : 변형이 적용되는 기준점을 설정.
+        이 속성은 모든 transform함수에 영향을 준다.
+        기본값은 요소의 중심점(50%, 50%).
+        X축과 Y축을 기준으로 지정할 수 있으며, 선택적으로 Z축도 지정 가능*/
         transform-origin: left top;
       }
 
-      .item15:hover{
+      .item15:hover {
         transform: rotate(0.5turn);
+        /*Z축 추가*/
         transform-origin: 50% 50% 10px;
       }
     </style>
