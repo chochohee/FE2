@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        padding: 100px;
+        display: flex;
+        gap: 100px;
+      }
+
+      .box {
+        width: 100px;
+        border: solid 2px black;
+        position: relative;
+      }
+
+      .box > div {
+        width: 100px;
+        height: 100px;
+        background-color: salmon;
+        opacity: 0.7;
+        transition: all 1s;
+      }
+
+      .box > .item {
+        background-color: skyblue;
+      }
+
+      <!-- translate박스 composite레이어에서만 변화가 발생하며,
+      다른요소의
+        레이아웃에
+        영향X
+        사용권장시점
+        -
+        애니메이션이나
+        빈번한
+        위치
+        변경이
+        필요할
+        때
+        -
+        성능이
+        중요할
+        상황일때
+        (ex: 모바일)
+        -
+        다른요소의
+        레이아웃에
+        영향을
+        주지않아야
+        할
+        때
+        --
+        > .translate-item:hover {
+        transform: translateY(100px);
+      }
+
+      <!--
+        position
+        박스
+        Layout단계부터
+        다시
+        계산이
+        시작됨.
+        주변
+        요소의
+        레이아웃에
+        영향있을
+        수
+        있음
+        사용권장시점
+        -
+        정적인
+        레이아웃
+        구성시
+        -
+        요소의
+        위치
+        변경이
+        다른
+        요소의
+        레이아웃에
+        영향을
+        줘야할
+        때
+        -
+        복잡한
+        레이아웃
+        구조에서
+        요소를
+        배치할
+        때
+        --
+        > .position-item:hover {
+        position: absolute;
+        top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <div class="translate-item">translate</div>
+        <div class="item">item</div>
+      </div>
+      <div class="box">
+        <div class="position-item">position</div>
+        <div class="item">item</div>
+      </div>
+    </div>
+  </body>
+</html>
