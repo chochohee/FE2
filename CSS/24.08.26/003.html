@@ -25,8 +25,11 @@
       }
 
       .item2 {
-        /* transform적용에 걸리는시간 */
+        /* transition이 완료되는데 걸리는시간 */
         transition-duration: 3s;
+        /*전환 효과를 적용할 CSS 속성을 지정.
+        주요 값으로는 all, none, 특정 속성 이름(width, color 등)이 있고,
+        여러 속성은 쉼표로 구분하여 나열 가능*/
         /* 명시한 내용만 duration시간에 맞춰서 변화함 */
         transition-property: background-color;
       }
@@ -36,6 +39,8 @@
       }
 
       .item3 {
+        /*transition의 진행 속도를 설정.
+        주요 값으로는 ease, linear, ease-in, ease-out, ease-in-out, cubic-bezier(n,n,n,n), steps(n,startlend)가 있다.*/
         transition-timing-function: ease;
       }
       .item4 {
@@ -56,10 +61,19 @@
       }
 
       .item9 {
+        /* steps : 변화의 단계를 설정, 각 단계는 일정한 시간동안 유지되며, 단계의 변화는 각 단계의 끝 부분 또는 시작 부분에서 발생한다.
+        - numder_of_steps : 애니메이션을 나눌 단계의 수를 지정 / 양의 정수사용
+        - direction(선택 사항) : 각 단계의 변화를 언제 발생시킬지 지정. 기본값 = end
+         = start : 각 단계의 변화가 시작 부분에서 발생
+         = end : 각 단계의 변화가 끝 부분에서 발생
+         주로 프레임기반 애니메이션이나 타이핑 효과 등을 구현할 때 유용하게 사용됨.*/
         transition-timing-function: steps(5, end);
       }
 
       .item10 {
+        /*시작을 지연시키는 시간을 설정,
+        양수값 : 지정된 시간 후에 시작
+        음수값 : 이미 진행중인 것 처럼 시작*/
         transition-delay: -1s;
       }
     </style>
