@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @keyframes move-box {
+        /* from {
+        }
+        to {
+        } */
+
+        0% {
+          transform: translate(0, 0);
+        }
+        100% {
+          transform: translate(300px, 0);
+        }
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        animation-name: move-box;
+        animation-duration: 1s;
+        animation-timing-function: steps(4);
+        /*animation-delay: 3s;
+        animation-delay: -2s;*/
+
+        /*애니메이션의 반복횟수*/
+        animation-iteration-count: 4;
+        animation-iteration-count: infinite;
+
+        /*애니메이션의 진행방향지정*/
+        /*역방향*/
+        animation-direction: reverse;
+        /*왕복*/
+        animation-direction: alternate;
+
+        /* 애니메이션의 실행 전/후 스타일 적용방법 */
+        /*애니메이션 종료 후 마지막 키프레임 유지*/
+        animation-fill-mode: forwards;
+        /* forwawrds와 backwards를 모두 적용 */
+        animation-fill-mode: both;
+      }
+
+      .box:hover {
+        /*애니메이션의 재생상태*/
+        animation-play-state: paused;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">hello world</div>
+  </body>
+</html>
