@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --translateZ: calc((340px * 6) / 3.14 / 2);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      div {
+        height: 100vh;
+        perspective: 1000px;
+      }
+
+      @keyframes rotate {
+        to {
+          transform: translate(-50%, -50%) rotateY(1turn);
+        }
+      }
+
+      .item-list {
+        position: relative;
+        width: 340px;
+        height: 500px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transform-style: preserve-3d;
+        animation: rotate 10s infinite linear;
+        animation-direction: reverse;
+      }
+
+      .item-list li {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+      }
+
+      li img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      li:nth-child(1) {
+        transform: rotateY(0) translateZ(var(--translateZ));
+      }
+
+      li:nth-child(2) {
+        transform: rotateY(calc(360deg / 6)) translateZ(var(--translateZ));
+      }
+
+      li:nth-child(3) {
+        transform: rotateY(calc((360deg / 6) * 2)) translateZ(var(--translateZ));
+      }
+
+      li:nth-child(4) {
+        transform: rotateY(calc((360deg / 6) * 3)) translateZ(var(--translateZ));
+      }
+
+      li:nth-child(5) {
+        transform: rotateY(calc((360deg / 6) * 4)) translateZ(var(--translateZ));
+      }
+
+      li:nth-child(6) {
+        transform: rotateY(calc((360deg / 6) * 5)) translateZ(var(--translateZ));
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul class="item-list">
+        <li>
+          <img src="./image/totoro/totoro1.png" alt="몸풀기하는 totoro" />
+        </li>
+        <li>
+          <img src="./image/totoro/totoro2.png" alt="아령운동하는 totoro" />
+        </li>
+        <li>
+          <img src="./image/totoro/totoro3.png" alt="줄넘기하는 totoro" />
+        </li>
+        <li><img src="./image/totoro/totoro4.png" alt="요가하는 totoro" /></li>
+        <li>
+          <img src="./image/totoro/totoro5.png" alt="훌라우프하는 totoro" />
+        </li>
+        <li>
+          <img src="./image/totoro/totoro6.png" alt="웨이트하는 totoro" />
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
