@@ -1,44 +1,64 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title></title>
     <style>
-        @media (min-width: 640px) and (max-width: 800px){
-            body {
-                font-size: 4rem;
-            }
+      /* 너비 기반 미디어 쿼리 */
+      /* min-width : 최소 너비 조건
+              max-width : 최대 너비 조건 */
+      /* 최소 640px부터 최대 800px까지 스타일 적용 */
+      @media (min-width: 640px) and (max-width: 800px) {
+        body {
+          font-size: 4rem;
+        }
+      }
+
+      /* not 연산자 : 조건을 반전시킨다.
+              미디어 유형(all, screen, print 등)을 지정한 경우, 해당 미디어 유형을 제외한 조건에만 적용 */
+      /* and 연산자 : 모든 조건을 만족하는 경우에만 스타일을 적용 */
+      @media not screen and (max-width: 800px) {
+        body {
+          background-color: red;
+        }
+      }
+
+      /* orientation속성 : 방향 기반 미디어 쿼리 */
+      /* landscape : 가로방향*/
+      @media (orientation: landscape) {
+        body {
+          background-color: gold;
+        }
+      }
+
+      /* partrait : 세로방향 */
+      @media (orientation: portrait) {
+        body {
+          background-color: royalblue;
+        }
+      }
+
+      /* 쉼표 연산자 : 나열된 조건 중 하나라도 만족하는 경우 스타일 적용 */
+      @media (min-width: 700px), (orientation: landscape) {
+        body {
+          background-color: rosybrown;
         }
 
-        @media not screen and (max-width: 800px) {
-            body{
-                background-color: red;;
-            }
+        /* +only 키워드 : 미디어 쿼리를 지원하는 브라우저에서만 스타일을 적용하도록 한다.
+              해당 키워드를 사용할 때는 반드시 미디어 유형을 지정해 주어야 한다. */
+        @media only screen and (max-width: 500px) {
+          body { 스타일
+          }
         }
-
-        /* @media (orientation: landscape){
-            body{
-                background-color: gold;
-            }
-        }
-
-        @media (orientation: portrait){
-            body{
-                background-color: royalblue;
-            }
-        } */
-
-        @media (min-width: 700px), (orientation: landscape){
-            body{
-                background-color: rosybrown;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-안녕하세요
-</body>
+  </head>
+  <body>
+    안녕하세요
+  </body>
 </html>
