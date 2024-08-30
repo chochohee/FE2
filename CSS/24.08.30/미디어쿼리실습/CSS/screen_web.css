@@ -1,0 +1,57 @@
+@media (min-width: 1920px) {
+  main .container {
+    min-width: 1200px;
+    max-width: 1920px;
+    min-height: 1200px;
+    margin-left: 18.75vw;
+    grid-template-areas:
+      "text img1"
+      "text img2";
+  }
+
+  .text-wrap {
+    width: 38.25rem;
+    margin-top: 22vh;
+    margin-right: 5vw;
+  }
+
+  .text-wrap .title {
+    font-size: 4.375rem;
+    line-height: 5.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .text-wrap .content {
+    line-height: 1.875rem;
+  }
+
+  /* img */
+  .img-wrap {
+    margin-top: 22vh;
+  }
+
+  .img-wrap li {
+    flex-direction: row;
+    position: relative;
+    max-width: 486px;
+    width: 25vw;
+    height: 280px
+  }
+
+  .img-wrap .img-content h3 {
+    font-size: 1.875rem;
+    line-height: 2.35rem;
+    top: 30px;
+    left: 30px;
+  }
+
+  .img-wrap .img-content a {
+    bottom: 30px;
+    right: 30px;
+  }
+
+  .img-wrap .img1 {
+    margin-bottom: 1.25rem;
+  }
+
+}
