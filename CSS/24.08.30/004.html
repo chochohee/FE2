@@ -46,5 +46,19 @@ srcset이 비어있거나 너비 서술자를 사용하지 않은 경우, 또는
 srcset="./img/chilli_360px.jpg 360w, ./img/chilli_720px.jpg 720w, ./img/chilli_1440px.jpg 1440w"
 sizes="(max-width:360px) 200px, (max-width:720px) 400px, 800px"
 src="./img/chilli_360px.jpg" alt="다람쥐 캐릭터 칠리">
+
+
+<!-- 아트 디렉션 -->
+ <!-- 중요한 부분을 자른 이미지를 보여주는 기법 / 반응형 이미지에서 이미지의 의도가 제대로 전달되도록
+ 기기에 따라 사진의 핵심을 확대해서 보여주는 형태의 방법을 말함 -->
+ <!-- picture요소 = 여러개의 source요소의 하나의 img요소를 포함 -->
+<picture>
+    <!-- source요소 = 브라우저가 선택할 수 있는 이미지를 제공
+    브라우저는 source 요소를 순서대로 검토하여 가장 적합한 요소를 선택하고,
+    일치하는 항목이 없거나 브라우저가 picture 요소를 지원하지 않는 경우 img 요소가 사용됨 -->
+    <source media="(min-width: 1024px)" srcset="./img/lication-chilli.png">
+    <source media="(max-width: 1024px)" srcset="./img/lication-chilli2.png">
+    <img src="./img/lication-chilli.png" alt="위니브 리케이션의 칠리" />
+</picture>
 </body>
 </html>
