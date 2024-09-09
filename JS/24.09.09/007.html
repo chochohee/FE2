@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // var의 스코프
+    // 스코프 : 변수의 유효 범위
+    var a = "weniv"; // 전역 스코프 : 코드 어디서나 접근할 수 있는 변수
+    
+    function func() {
+        var a = "fe";
+        var b = "hello"; // 지역 스코프(함수 스코프) : 함수 내에서만 접근할 수 있는 범수
+        console.log(a);
+        console.log(window.a); // 전역 변수 -> 어디서든 접근이 가능하다.
+        console.log(b);
+
+    }
+    func();
+
+    console.log(b);
+
+    // let, const 스코프 -> 지역 스코프(블록 스코프) : 블록 내에서만 접근할 수 있는 변수
+    // 코드 블럭 : {}
+
+    // 조건문, 반복문
+    if (true) {
+        let c = 30; // 지역 스코프(블록 스코프)
+        console.log(c);
+
+        var d = 40; // 전역 스코프
+    }
+
+    // console.log(c);
+    console.log(d);; //40
+
+    // 재할당
+    let name = "안전하지 않을 수도 있다."
+
+    // 우선 const로 선언하고 문제가 생기면 let으로 변경하는것을 추천.
+    // var의 경우 안정적이지 않으므로 사용을 지양해야한다.
+</script>
+</body>
+</html>
