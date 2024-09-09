@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      console.log('안녕하세요!');
+      console.log('안녕하세요', '초희입니다');
+      // 여러개 출력
+
+      //여러 타입의 콘솔
+      console.error('에러입니다');
+      console.warn('경고입니다');
+      console.info('안내입니다');
+
+      // 표평태
+      console.table({
+      이름: "위니브",
+      위치: "제주도",
+      });
+
+      //시간정보
+      console.time("tick");
+      console.timeEnd("tick");
+
+      //스타일적용
+      console.log("%cHello World",
+          "color:hotpink; font-size:24px;"
+      );
+      console.log("%cHello %cWorld",
+          "color:hotpink; font-size:24px;",
+          "color:royalblue; font-size:24px;"
+      );
+    </script>
+  </body>
+</html>
