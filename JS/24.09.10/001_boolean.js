@@ -64,3 +64,9 @@ console.log(!!isRaining);
 console.log(`!!23 >> ${!!23}`); // true
 console.log(`!!'hello' >> ${!!"hello"}`); // true
 console.log(`!!'' >> ${!!""}`); // false
+
+if ("") {
+  // 23 -> Truthy한 값
+  // '' -> Falsy한 값
+  console.log("True입니다!");
+}
