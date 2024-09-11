@@ -1,6 +1,6 @@
 // undefined
 let a;
-console.log(a); // undefined : 변수에 값이 할당되어 있지 않음
+console.log(a); // undefined : 변수에 값이 할당되어 있지 않음, 정의되지 않은 변수에 접근할 때
 console.log(typeof a); // undefined
 
 console.log(typeof b); // 선언하지 않은 변수에 typeof -> undefined
