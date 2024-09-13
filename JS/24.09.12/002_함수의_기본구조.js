@@ -40,6 +40,7 @@ function add(num) {
   num += 10;
   console.log(num);
 }
+
 let a = 10;
 add(a);
 console.log(a);
@@ -60,7 +61,7 @@ console.log("===== 반환값 =====");
 // input -> 처리 -> output
 // return 뒤에 반환값을 작성
 function mul(a, b) {
-  return a * b;
+  return a * b; 
 }
 mul(10, 2);
 console.log(mul(10, 2)); // console.log(20);
@@ -111,7 +112,6 @@ getIdPw(id, pw);
 inputValidation(id, pw);
 sendUserInfo(id, pw);
 redirectMainPage();
-
 
 // 사칙연산 만들어보기
 function sum(num1 = 0, num2 = 0) {
