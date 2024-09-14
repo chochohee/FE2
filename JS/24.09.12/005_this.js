@@ -27,8 +27,8 @@ const obj2 = {
     console.log("function1:", this); // obj2
 
     function func2() {
-      console.log("function2:", this); // window
-    }
+      console.log("function2:", this); // window -
+    } // 메서드 내부의 함수는 메서드가 아닌 일반함수로 취급된다.
     func2();
   },
 };
