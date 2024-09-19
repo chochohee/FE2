@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .blind {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="”wrap”">
+      <h1>
+        <a href="”#”">HOME</a>
+      </h1>
+      <ul>
+        <li id="ghost">GHOST</li>
+        <li>DRACULAR</li>
+        <li id="horror">
+          Horror Movie <a href="”#”">view site</a>
+          <span class="blind">SPAN</span>
+          <span>SPAN TAG</span>
+        </li>
+      </ul>
+      <p>Hello</p>
+    </div>
+    <dl id="list">
+      <dt>Keyword</dt>
+      <dd>Description 1</dd>
+      <dd class="apple">Description 2</dd>
+      <dd>Description 3</dd>
+    </dl>
+
+    <ul class="list">
+      <li>APPLE</li>
+      <li>MANGO</li>
+      <li>BERRY</li>
+    </ul>
+
+    <script>
+      const ghost = document.querySelector("#ghost");
+      const a = document.querySelectorAll("a"); // nodeList
+
+      ghost.style.color = "red";
+      a[0].style.color = "green";
+      a[1].style.color = "tomato";
+
+      /* #list -> 배경색을 gold로 지정(getElementById를 이용)
+      .apple -> 글자 크기를 50px로 지정(querySelector를 이용)
+      dd(첫번째) -> 글자의 기울기를 이탤릭으로(getElementByTagName을 이용)
+      dd(세번째) -> 글자색을 레드로(querySelectorAll을 이용) */
+
+      const list = document.getElementById("list");
+      list.style.backgroundColor = "gold";
+
+      const apple = document.querySelector(".apple");
+      apple.style.fontSize = "50px";
+
+      const dd1 = document.getElementsByTagName("dd");
+      dd1[0].style.fontStyle = "italic";
+
+      const dd2 = document.querySelectorAll("dd");
+      dd2[2].style.color = "red";
+
+      const horror = document.querySelector("#horror");
+      // target.addEventListener('event name'. function());
+      /* console.log("innerHTML :", horror.innerHTML);
+        console.log("textContent :", horror.textContent);
+        console.log("innerText :", horror.innerText); */ // 화면에 보이는 text
+
+      horror.addEventListener("click", (e) => {
+        console.log("target :", e.target); // 실제 클릭된 요소(변경이 될 수 있다.)
+        console.log("currentTarget :", e.currentTarget); // 클릭의 주체 요소 = horror
+      });
+
+      // ul에 클릭이벤트가 발생했을때, 어떤 목록을 클릭했는지, 컨텐츠를 console에 찍어보기
+      const list1 = document.querySelector(".list");
+      list1.addEventListener("click", (e) => {
+        console.log(e.target.innerHTML);
+      });
+
+      const arr = ["apple", "mango", "banana"];
+      arr.forEach((el, index) => {
+        console.log(index, el);
+      });
+    </script>
+  </body>
+</html>
