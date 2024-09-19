@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      button {
+        cursor: pointer;
+      }
+
+      .dim {
+        background-color: rgba(0, 0, 0, 0.7);
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+      }
+
+      .modal {
+        background-color: slateblue;
+        width: 300px;
+        height: 300px;
+        border-radius: 20px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+      }
+
+      .modal button {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+      }
+
+      .modal p {
+        font-size: 30px;
+        color: white;
+        display: flex;
+        justify-content: center;
+      }
+
+      .vew {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="open">OPEN MODAL</button>
+    <div class="dim">
+      <div class="modal">
+        <p>모달창띄우기</p>
+        <button>X</button>
+      </div>
+    </div>
+
+    <script>
+      const open = document.querySelector(".open");
+      const modal = document.querySelector(".modal");
+      const dim = document.querySelector(".dim");
+      const closeModal = document.querySelector(".modal button");
+
+      open.addEventListener("click", () => {
+        modal.classList.add("vew");
+        dim.classList.add("vew");
+      });
+
+      closeModal.addEventListener("click", () => {
+        modal.classList.remove("vew");
+        dim.classList.remove("vew");
+      });
+    </script>
+  </body>
+</html>
