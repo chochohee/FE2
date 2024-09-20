@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Theme</title>
+    <link rel="stylesheet" href="./CSS/001..css" />
+    <style>
+      :root {
+        --body-bg: #f5f5f5;
+        --body-text: #222;
+        --box-bg: #eee;
+        --box-text: #37217c;
+      }
+      body {
+        background-color: var(--body-bg);
+        color: var(--body-text);
+      }
+      .container {
+        background-color: var(--box-bg);
+        color: var(--box-text);
+      }
+
+      .dark {
+        --body-bg: #37217c;
+        --body-text: #f5f5f5;
+        --box-bg: #5a4b85;
+        --box-text: #e8e8e8;
+      }
+    </style>
+  </head>
+  <body class="light">
+    <div class="container">
+      <h1>Mode : Light</h1>
+      <div class="btns">
+        <button type="button" class="dark">Dark</button>
+        <button type="button" class="light">Light</button>
+      </div>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos cumque
+        itaque accusantium odit exercitationem velit voluptates provident vel
+        vero nisi fugit corporis alias, libero atque praesentium, sed veritatis
+        laudantium ad.
+      </p>
+    </div>
+
+    <script>
+      const body = document.body;
+      const container = document.querySelector(".container");
+      const btns = document.getElementsByTagName("button");
+      Array.from(btns).forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const mode = btn.className;
+          body.className = mode;
+          console.log(mode);
+        });
+      });
+    </script>
+  </body>
+</html>
