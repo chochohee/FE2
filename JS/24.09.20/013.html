@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .btn-delete {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Element</h1>
+      <input type="text" id="text" />
+      <button class="btn">+ADD</button>
+      <ul class="foodList"></ul>
+    </div>
+
+    <script>
+      const foodList = document.querySelector(".foodList");
+      const text = document.getElementById("text");
+      const addBtn = document.querySelector(".btn");
+
+      addBtn.addEventListener("click", () => {
+        const li = document.createElement("LI");
+        const deleteBtn = document.createElement("BUTTON");
+        let note = text.value;
+        deleteBtn.className = "btn-delete";
+        deleteBtn.textContent = "x";
+        li.textContent = note;
+        li.appendChild(deleteBtn);
+        foodList.appendChild(li);
+        text.value = "";
+        console.log(foodList);
+      });
+
+      /* 강사님 시연예제 form으로 작성
+      const fm = document.forms.myForm;
+        const foodList = document.querySelector('.foodList')
+
+        fm.addEventListener('submit', printList) 
+
+        function printList(e) {
+            e.preventDefault();
+            let li = document.createElement('LI');
+            let btn = document.createElement('BUTTON');
+            let food = fm.food.value; // 입력된 과일값을 얻어오기
+
+            li.textContent = food;
+            btn.setAttribute('type','button');
+            btn.className = 'btn-delete';
+            btn.textContent = 'X';
+
+            li.appendChild(btn);
+            foodList.appendChild(li);
+            // <li>과일이름 <button type="button" class="btn-delete">X</button></li>
+        }*/
+    </script>
+  </body>
+</html>
