@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/001..css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>온라인 수강 신청</h1>
+      <form name="myForm">
+        <fieldset>
+          <legend>온라인수강신청</legend>
+          <ul class="fmList">
+            <li>
+              <label for="user" class="title">이름</label>
+              <input type="text" name="user" id="user" />
+            </li>
+
+            <li>
+              <strong class="title">학년</strong>
+              <label>
+                <input type="radio" name="grade" value="1학년" checked />
+                <span>1학년</span>
+              </label>
+              <label>
+                <input type="radio" name="grade" value="2학년" />
+                <span>2학년</span>
+              </label>
+              <label>
+                <input type="radio" name="grade" value="3학년" />
+                <span>3학년</span>
+              </label>
+            </li>
+
+            <li>
+              <label for="subject" class="title">과목선택</label>
+              <select name="subject" id="subject">
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JS</option>
+              </select>
+            </li>
+            <li>
+              <label for="note" class="title">Note</label>
+              <textarea name="note" id="note"></textarea>
+            </li>
+          </ul>
+
+          <div class="btn-area">
+            <button type="submit" class="btn">신청하기</button>
+          </div>
+        </fieldset>
+      </form>
+      <div class="result-container"></div>
+    </div>
+
+    <script>
+      const fm = document.forms.myForm;
+      const grade = document.querySelectorAll('input[name="grade"]');
+      const result = document.querySelector(".result-container");
+      const btn = document.querySelector(".btn");
+      const input = document.getElementsByTagName("input");
+
+      fm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let name = fm.user.value;
+        let myGrade = document.querySelector('input[name="grade"]:checked');
+        let mySubject = fm.subject.value;
+        let myNote = fm.note.value;
+
+        result.innerHTML = `<p><strong>${name}</strong>님(${myGrade.value})</p>
+              <p>${mySubject} 과목이 수강신청 되었습니다. </p>
+              <p>
+              전달메모 : ${myNote}
+              </p>`;
+      });
+    </script>
+  </body>
+</html>
