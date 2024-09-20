@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../24.09.20/CSS/001.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Count</h1>
+      <div class="count-container">
+        <button id="minus">-</button>
+        <span id="num">0</span>
+        <button id="plus">+</button>
+      </div>
+    </div>
+    <script>
+      const minusbtn = document.getElementById("minus");
+      const plusbtn = document.getElementById("plus");
+      const btns = document.querySelectorAll(".count-container button");
+      const number = document.getElementById("num");
+      let count = 0;
+
+      btns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (btn.id === "plus") {
+            count++;
+          } else {
+            count--;
+          }
+
+          num.textContent = count;
+        });
+      });
+
+      //   plusbtn.addEventListener("click", () => {
+      //     count++;
+      //     console.log((number.textContent = count));
+      //   });
+
+      //   minusbtn.addEventListener("click", () => {
+      //     count--;
+      //     console.log((number.textContent = count));
+      //   });
+    </script>
+  </body>
+</html>
