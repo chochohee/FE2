@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Element</h1>
+    <ul class="foodList"></ul>
+
+    <script>
+      const foodList = document.querySelector(".foodList");
+      // 요소 생성
+      const li = document.createElement("LI");
+      li.textContent = `APPLE`;
+      //   <li>APPLE</li>
+
+      const span = document.createElement("span");
+      span.className = "red";
+      span.textContent = `MANGO`;
+
+      /*
+      <li>APPLE<span class="red">MANGO</span></li>
+      */
+
+      const img = document.createElement("img");
+      img.alt = "holloween";
+      img.src = "../24.09.19/images/bat.jpg";
+
+      const strong = document.createElement("strong");
+      strong.textContent = "STRONG TAG";
+
+      li.appendChild(span);
+      li.appendChild(img);
+      //<li>APPLE<span></span><img/></li>
+      li.insertBefore(strong, span);
+      foodList.appendChild(li);
+    </script>
+  </body>
+</html>
