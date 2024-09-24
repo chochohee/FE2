@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <style>
+    div {
+      background-color: red;
+      height: calc(100vh * 10);
+    }
+  </style>
+  <body>
+    <div></div>
+    <script>
+      function throttle(mainFunction, delay) {
+        let timerFlag = null;
+
+        return (...args) => {
+          if (timerFlag === null) {
+            mainFunction(...args);
+            timerFlag = setTimeout(() => {
+              timerFlag = null;
+            }, delay);
+          }
+        };
+      }
+
+      // 비동기 통신을 흉내낸 함수
+      function fetchData() {
+        console.log("데이터를 가져오는 중...");
+        setTimeout(() => {
+          console.log("데이터 가져오기 완료!");
+        }, Math.random() * 1000);
+      }
+
+      const throttledFetchData = throttle(fetchData, 5000);
+      window.addEventListener("scroll", throttledFetchData);
+    </script>
+  </body>
+</html>
