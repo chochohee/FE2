@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*   const me = {
+        name: "라이캣",
+        address: "제주도 제주시 인다 1길",
+        phoneNum: "010-0000-0000",
+        canWalk: function () {
+          console.log("라이캣이 걷는다.");
+        },
+        teaching: function (student) {
+          student.levelUp();
+        },
+      };
+
+      const lion = {
+        level: 1,
+        levelUp: function () {
+          this.level++;
+        },
+      };
+
+      me.teaching(lion); */
+
+      //   prototype
+      /*      function Me() {
+        this.name = "라이캣";
+        this.address = "제주도 제주시 인다 1길";
+        this.phoneNum = "010-0000-0000";
+      }
+
+      Me.prototype.canWalk = function () {
+        console.log("라이캣이 걷는다.");
+      };
+      Me.prototype.teaching = function (student) {
+        student.levelUp();
+      };
+
+      const me = new Me();
+      me.canWalk(); */
+
+      // class 문법
+      class Me {
+        constructor() {
+          this.name = "라이캣";
+          this.address = "제주도 제주시 인다 1길";
+          this.phoneNum = "010-0000-0000";
+          this.canWalk = function () {
+            console.log("라이캣이 걷는다.");
+          }; // 내부에서 메서드는 되도록 사용 지양
+        }
+
+        teaching(student) {
+          student.levelUp();
+        }
+      }
+    </script>
+  </body>
+</html>
