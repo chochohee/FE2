@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*     function FoodPicker(foodNames) {
+        this.menu = foodNames;
+        this.sayMenu = function () {
+          console.log(
+            `오늘의 메뉴는 ${
+              this.menu[Math.floor(Math.random() * foodNames.length)]
+            }입니다.`
+          );
+        };
+      }
+
+      const robot = new FoodPicker(["짜장면", "고기국수", "몸국"]); */
+
+      function FoodPicker(foodNames) {
+        this.menu = foodNames;
+      }
+
+      FoodPicker.prototype.sayMenu = function () {
+        console.log(
+          `오늘의 메뉴는 ${
+            this.menu[Math.floor(Math.random() * this.menu.length)]
+          }입니다.`
+        );
+      };
+
+      const robot = new FoodPicker(["짜장면", "고기국수", "몸국"]);
+
+      robot.sayMenu();
+    </script>
+  </body>
+</html>
