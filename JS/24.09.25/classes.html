@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Parent {
+        constructor() {
+          this.name = "초희";
+        }
+
+        sayName() {
+          console.log(this.name);
+        }
+      }
+
+      class Child extends Parent {
+        constructor() {
+          super();
+          this.myName = "소을";
+        }
+
+        sayName() {
+          console.log(this.myName);
+        }
+      }
+      const child = new Child();
+
+      class Sausage {
+        constructor(a, b) {
+          this.valueA = a;
+          this.valueB = b;
+        }
+        taste() {
+          console.log(`${this.valueA}와 ${this.valueB}의 맛이 난다!`);
+        }
+      }
+      const sausage = new Sausage("소고기", "파");
+
+      class FireSausage extends Sausage {
+        taste() {
+          console.log(`${this.valueA}와 ${this.valueB}의 맛이 난다!`);
+          console.log('불맛이 난다!');
+        }
+      }
+
+      const fireSausage = new FireSausage("돼지고기", "마늘");
+    </script>
+  </body>
+</html>
