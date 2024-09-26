@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      async function message() {
+        const hello = await new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("hello");
+          }, 100);
+        });
+
+        const world = await new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("world");
+          }, 100);
+        });
+
+        console.log(`${hello} ${world}`);
+      }
+
+      message(); */
+
+      // async/awit로 작성된 것을 promise로 바꿔보기
+      function message() {
+        new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("hello");
+          }, 100);
+        })
+          .then((result) => {
+            return new Promise((resolve) => {
+              setTimeout(() => {
+                resolve(result + " world");
+              }, 100);
+            });
+          })
+          .then((finalResult) => {
+            console.log(finalResult);
+          });
+      }
+      message();
+    </script>
+  </body>
+</html>
