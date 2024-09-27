@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <style>
+    div {
+      background-color: salmon;
+      width: 100px;
+      padding-top: 150px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: 0.1s ease;
+    }
+  </style>
+  <body>
+    <div class="move-block"></div>
+    <script>
+      let x = 0;
+
+      window.addEventListener("keydown", move);
+      function move() {
+        const block = document.querySelector(".move-block");
+
+        function moveRight() {
+          x += 0;
+          document.querySelector(".move-block").style.left = x + "px";
+        }
+
+        function moveLeft() {
+          x -= 10;
+          document.querySelector(".move-block").style.left = x + "px";
+        }
+
+        if (event.key === "ArrowRight") {
+          moveRight();
+        }
+        if (event.key === "ArrowLeft") {
+          moveLeft();
+        }
+
+        console.log(event.key);
+      }
+    </script>
+  </body>
+</html>
