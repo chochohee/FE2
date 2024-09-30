@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    
+    <style>
+        /* input에 입력된 값이 유효할 때 선택하는 선택자 */
+        .text:valid{
+            background-color: teal;
+        }
+
+        .text:invalid{
+            background-color: salmon;
+        }
+
+        label:has(input:required)::after {
+            content: "❤";
+        }
+
+
+    </style>
+  <body>
+    <form action="">
+      <!-- minlength = "" 텍스트의 데이터 길이 제한 -->
+       <label for="">
+      <input type="text" minlength="5" maxlength="10" class="text" required/>
+    </label>
+      <!-- min, max = 숫자의 크기를 제한하는 속성 -->
+      <label for="">
+        <input type="number" min="5" max="20" step="3" required class="number"/>
+      </label>
+
+
+      <button>제출</button>
+    </form>
+
+    <script>
+    //   const inp = document.querySelector("input");
+    //   inp.value = 'helllllooo'
+    </script>
+  </body>
+</html>
