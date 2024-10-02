@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas width="400" height="400"></canvas>
+    <script>
+      const canvas = document.querySelector("canvas");
+      const ctx = canvas.getContext("2d"); // drawing context를 참조
+
+      // 상자 만들기
+      ctx.fillStyle = "teal";
+      ctx.fillRect(0, 0, 50, 50);
+
+      ctx.fillRect(30, 30, 50, 50);
+
+      ctx.fillRect(60, 60, 50, 50);
+
+      ctx.fillRect(90, 90, 50, 50);
+
+      // 선 그리기
+      // 새로운 선을 그릴 것을 알린다.
+      ctx.beginPath();
+      //선의 색상
+      ctx.strokeStyle = "tomato";
+      // 선의 두께(px단위)
+      ctx.lineWidth = 10;
+      // 선의 시작 위치
+      ctx.moveTo(0, 0);
+      // 선의 종료지점
+      ctx.lineTo(150, 300);
+      // 화면에 선을 그린다.
+      ctx.stroke();
+
+      // 원 그리기
+      ctx.beginPath();
+      ctx.arc(100, 200, 50, 0, Math.PI * 2);
+      ctx.strokeStyle = "hotpink";
+      ctx.lineWidth = 10;
+      ctx.stroke();
+      ctx.fillStyle = "hotpink";
+      ctx.fill();
+    </script>
+  </body>
+</html>
