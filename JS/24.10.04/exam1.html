@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let msg = "hello";
+      let info = "Ormi";
+
+      // 변수를 이용하여 스위칭
+      let temp;
+      console.log((temp = msg), (msg = info), (info = temp));
+
+      // 자료구조의 특징을 이용하여 스위칭
+      msg = [msg, info];
+      info = msg[0];
+      msg = msg[1];
+
+      // const [val1, val2] = [1, 2];
+      // const [mag, info] = ["Ormi", "hello"];
+
+      let a = 100;
+      let b = 200;
+
+      // 숫자의 특성을 이용하여 스위칭
+      console.log((a = a + b), (b = a - b), (a = a - b));
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .highLight {
+        background-color: lemonchiffon;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, illo.
+      Necessitatibus sit corrupti eius iusto modi alias ratione expedita in
+      voluptates ut iste, repudiandae assumenda quas culpa aliquam repellat
+      excepturi quisquam saepe quasi rem pariatur? Nostrum, praesentium? Dolore
+      recusandae debitis atque quae in commodi nostrum est architecto itaque
+      sunt esse, praesentium cupiditate corporis saepe, rem sapiente aperiam
+      doloribus deserunt? In optio, laboriosam, eum pariatur quos ut nihil
+      nesciunt, similique dolor earum nam velit dicta non. Nemo quas voluptatem
+      eveniet itaque aliquam distinctio placeat labore porro accusamus tenetur
+      dolorem atque odit omnis veniam expedita facilis recusandae, optio in sunt
+      perferendis nesciunt.
+    </p>
+    <script>
+      //8자 이상인 모든 단어를 노란색으로 강조하기. 마크업에서 단락 텍스트 중 8자 이상인 모든 단어를 강조 표시하세요
+      const paragraph = document.querySelector("p");
+      paragraph.innerHTML = paragraph.textContent
+        .split(" ")
+        .map((item) =>
+          item.length >= 8 ? `<strong class="highLight">${item}</strong>` : item
+        )
+        .join(" ");
+    </script>
+  </body>
+</html>

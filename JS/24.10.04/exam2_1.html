@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const users = [
+        {
+          id: 1,
+          name: "재현",
+          isActive: true,
+          age: 20,
+        },
+        {
+          id: 2,
+          name: "호준",
+          isActive: true,
+          age: 18,
+        },
+        {
+          id: 3,
+          name: "유진",
+          isActive: false,
+          age: 30,
+        },
+      ];
+
+      // 1. 주어진 사용자 배열에서 이름 배열을 얻는 코드를 작성하세요
+      // 2. 활성화된 사용자만 가져오세요
+      // 3. 사용자를 나이 내림차순으로 정렬하세요
+
+      const names = users.map((user) => {
+        return user.name;
+      });
+
+      console.log(names);
+
+      const activeUser = users.filter((user) => {
+        return user.isActive;
+      });
+
+      console.log(activeUser);
+
+      const result = users
+        .filter((user) => user.isActive)
+        .map((user) => user.name);
+
+      console.log(result);
+
+      const sortedUsers = [...users].sort((a, b) => {
+        return b.age - a.age;
+      });
+
+      console.log(sortedUsers);
+
+      const result1 = [...users]
+        .sort((a, b) => {
+          return b.age - a.age;
+        })
+        .filter((user) => user.isActive)
+        .map((user) => user.name);
+
+      console.log(result1);
+    </script>
+  </body>
+</html>
