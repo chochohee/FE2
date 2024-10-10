@@ -1,0 +1,20 @@
+// Scss
+.profile-user {
+  background-image: url("../assets/user.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.comment-user {
+  @extend .profile-user;
+  border-width: 10px;
+}
+
+// mixin과 extend의 차이
+// mixin은 매개변수를 받아 동적인 적용이 가능하나, extend는 매개변수를 이용할 수 없다.
+// mixin이 조금더 큰 범위라고 생각하면되며, mixin의 경우 extend의 기능과 동시에 추가적인 기능이용이 가능하다.
+// mixin = 조건에 따라 스타일을 여러 선택자에 차등적용하고 싶을 때.
+// extend = 동일한 스타일을 여러 선택자에 사용하고 싶을 때(재사용)
