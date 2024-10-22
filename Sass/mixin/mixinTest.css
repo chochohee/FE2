@@ -9,17 +9,17 @@
     background-color: red;
   }
 }
-@media (min-width: 901px) and (max-width: 1200px) and (orientation: portrait) {
+@media (min-width: 901) and (max-width: 1200) and (orientation: portrait) {
   .responsive-element {
     font-size: 25px;
     padding: 20px;
     background-color: hotpink;
   }
 }
-@media (min-width: 1201px) and (max-width: 1800px) and (orientation: landscape) {
+@media (min-width: 1201px) and (max-width: auto) and (orientation: landscape) {
   .responsive-element {
     font-size: 30px;
     padding: 25px;
     background-color: lightgreen;
   }
-} /*# sourceMappingURL=mixinTest.css.map */
+}/*# sourceMappingURL=mixinTest.css.map */

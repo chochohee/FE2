@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .completed {
+        text-decoration: line-through;
+        color: #888;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Todo List</h1>
+      <div class="input-section">
+        <input type="text" id="todoInput" placeholder="할 일을 입력하세요" />
+        <button id="addBtn">추가</button>
+      </div>
+      <ul id="todoList"></ul>
+    </div>
+
+    <script>
+      $(function () {
+        // 할일 추가 함수
+        function addTodo() {
+          const todoText = $("#todoInput")[0].value.trim();
+          const todoHtml = `
+            <li class = "todo-item">
+                <input type="checkbox" />
+                <strong>${todoText}</strong>
+                <button class = "delBtn">삭제</button>
+            </li>
+            `;
+
+          $("#todoList").append(todoHtml);
+          $("#todoInput")[0].value = "";
+        }
+
+        $("#addBtn").click(addTodo);
+
+        $("#todoList").click(function (event) {
+          const $target = $(event.target);
+
+          // target이 checkbox 인 경우
+          if ($target.is('input[type="checkbox"]')) {
+            $target.next().toggleClass("completed");
+          }
+
+          // target이 button인 경우
+          if ($target.is(".delBtn")) {
+            $target.parent().remove();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

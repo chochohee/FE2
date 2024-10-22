@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <button type="button" id="btn_data">클릭해주세요!</button>
+    <div id="data">data</div>
+
+    <script>
+    //   $("#btn_data").click(function () {
+    //     $("#data").load(
+    //       "https://raw.githubusercontent.com/paullabkorea/coronaVaccinationStatus/main/data/data.json"
+    //     );
+    //   });
+
+    //   $("#btn_data").click(function () {
+    //     $("#data").load(
+    //       "https://raw.githubusercontent.com/paullabkorea/10000hour/main/index.html h1"
+    //     );
+    //   });
+
+    $('#btn_data').click(function() {
+    $("#data").load('https://raw.githubusercontent.com/paullabkorea/10000hour/main/index.html h1', function(responseText, statusText, xhr){
+            console.log(responseText);
+            console.log(statusText);
+            console.log(xhr);
+            console.log(xhr.status);
+        }
+    );
+});
+    </script>
+  </body>
+</html>

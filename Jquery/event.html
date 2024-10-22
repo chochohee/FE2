@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      #box {
+        width: 100px;
+        height: 100px;
+        opacity: 0.3;
+        background-color: red;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- <script>
+      //JQuery - 요소 선택과 hide
+      $("#text").text("Hello");
+      $("#divOne").fadeIn(3000);
+      $(".textTwo").text("안녕하세요");
+      $("h1").text("WOW");
+
+      // div 클릭했을 때 안 보이게 하기
+      // dom이 준비되면 실행해라!
+      $(function () {
+        $("div").click(function () {
+          $(this).hide();
+        });
+      });
+    </script> -->
+    <p id="text"></p>
+    <div id="divOne" class="box">hello div</div>
+    <p class="textTwo"></p>
+    <h1></h1>
+
+    <button type="button" id="btn_ani">클릭해주세요!</button>
+    <div id="box"></div>
+
+    <script>
+      // JQuery - animate
+      // 버튼 클릭했을 때 변화주기
+      // 'slow' 대신 ms 단위로도 줄 수 있습니다.
+      $("#btn_ani").click(function () {
+        $("#box").animate(
+          {
+            width: "300px",
+            height: "300px",
+            opacity: 1,
+          },
+          "slow"
+        );
+      });
+    </script>
+  </body>
+</html>
