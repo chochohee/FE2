@@ -1,0 +1,7 @@
+.resume {
+  border: 1px solid black;
+}
+
+.resume dl dt {
+    float: left;
+}
