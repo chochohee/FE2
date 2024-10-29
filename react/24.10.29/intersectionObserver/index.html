@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="target">target</div>
+
+    <script>
+      const target = document.querySelector(".target");
+
+      const options = {
+        root: null, // 기본값은 viewport
+        threshold: 0, // 0 ~ 1 까지 설정 가능  // 0은 닿았을때, 1은 완전히 겹쳤을때
+      };
+
+      const callback = (entry) => {
+        console.log(entry);
+      };
+
+      const observer = new IntersectionObserver(callback, options);
+
+      // root요소와 겹치는 주체를 target에 설정
+      observer.observe(target);
+    </script>
+  </body>
+</html>

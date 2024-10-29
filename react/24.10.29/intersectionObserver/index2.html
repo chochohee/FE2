@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      #root {
+        width: 100%;
+        height: 200vh;
+        border: 1px solid red;
+        overflow-y: scroll;
+      }
+
+      .target {
+        width: 100px;
+        height: 100px;
+        border: 1px solid teal;
+        background-color: royalblue;
+        margin: 400px auto 400px;
+        transition: 1s;
+      }
+
+      .target.intersecting {
+        background-color: teal;
+      }
+
+      .space {
+        height: 150vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="space"></div>
+      <div class="target"></div>
+    </div>
+
+    <script>
+      const root = document.querySelector("#root");
+      const target = document.querySelector(".target");
+
+      const options = {
+        root: root,
+        threshold: 0.5,
+      };
+
+      const callback = (entry) => {
+        console.log(entry);
+        if (entry[0].isIntersecting) {
+          entry[0].target.classList.add("intersecting");
+        } else {
+          entry[0].target.classList.remove("intersecting");
+        }
+      };
+
+      const observer = new IntersectionObserver(callback, options);
+
+      observer.observe(target);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .space {
+        height: 100vh;
+      }
+
+      ul li {
+        padding: 30px;
+        margin: 30px;
+        background-color: teal;
+        color: white;
+        border-radius: 10px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: 0.5s;
+      }
+
+      ul li.visible {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="space"></div>
+    <ul>
+      <li>1번입니다.</li>
+      <li>1번입니다.</li>
+      <li>1번입니다.</li>
+    </ul>
+
+    <script>
+      const items = document.querySelectorAll("ul li");
+
+      const options = {
+        root: null, // 공백이어도됨
+        threshold: 0.3,
+      };
+
+      const callback = (entries) => {
+        console.log(entries);
+
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          } else {
+            entry.target.classList.remove("visible");
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(callback, options);
+
+      items.forEach((item) => {
+        observer.observe(item);
+      });
+    </script>
+  </body>
+</html>

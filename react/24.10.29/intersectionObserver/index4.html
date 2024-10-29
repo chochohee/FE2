@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      header {
+        width: 100vw;
+        height: 5%;
+        background-color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        box-shadow: 0px 0px 1px gray;
+      }
+
+      progress {
+        width: 98vw;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+
+      ul li {
+        list-style: none;
+      }
+      ul li section {
+        width: 91vw;
+        height: 40vh;
+        border: 1px solid salmon;
+        background-color: rgb(255, 246, 249);
+        border-radius: 5px;
+        margin-top: 50px;
+        padding: 0 20px;
+      }
+
+      ul li section .section-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      ul li section .section-title button {
+        width: 60px;
+        height: 30px;
+        border: 1px solid gray;
+        border-radius: 5px;
+      }
+
+      ul li section.read .section-title button {
+        background-color: salmon;
+        color: white;
+        border: none;
+      }
+
+      ul li section p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <progress value="33" max="100"></progress>
+    </header>
+    <ul>
+      <li>
+        <section>
+          <div class="section-title">
+            <h3>섹션1</h3>
+            <button class="read">읽음</button>
+          </div>
+          <p>첫 번째 섹션입니다.</p>
+        </section>
+      </li>
+      <li>
+        <section>
+          <div class="section-title">
+            <h3>섹션2</h3>
+            <button class="read">읽음</button>
+          </div>
+          <p>두 번째 섹션입니다.</p>
+        </section>
+      </li>
+      <li>
+        <section>
+          <div class="section-title">
+            <h3>섹션3</h3>
+            <button>안읽음</button>
+          </div>
+          <p>세 번째 섹션입니다.</p>
+        </section>
+      </li>
+      <li>
+        <section>
+          <div class="section-title">
+            <h3>섹션4</h3>
+            <button>안읽음</button>
+          </div>
+          <p>네 번째 섹션입니다.</p>
+        </section>
+      </li>
+      <li>
+        <section>
+          <div class="section-title">
+            <h3>섹션5</h3>
+            <button>안읽음</button>
+          </div>
+          <p>다섯 번째 섹션입니다.</p>
+        </section>
+      </li>
+    </ul>
+
+    <script>
+      const items = document.querySelectorAll("ul li section");
+
+      const options = {
+        root: null,
+        threshold: 0.5,
+      };
+
+      const callback = (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("read");
+            console.log(entry.target)
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(callback, options);
+
+      items.forEach((item) => {
+        observer.observe(item);
+      });
+    </script>
+  </body>
+</html>
