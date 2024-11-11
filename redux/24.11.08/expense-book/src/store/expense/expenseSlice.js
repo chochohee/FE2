@@ -15,7 +15,7 @@ const expenseSlice = createSlice({
     },
   },
 });
-
+  
 const { addExpenseAction, setIncomeAction } = expenseSlice.actions;
 
 export { expenseSlice, addExpenseAction, setIncomeAction };
