@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>CAPTCHA 폼 예시</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+      }
+      h2 {
+        margin-top: 0;
+        color: #333;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #666;
+      }
+      input[type='text'] {
+        width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      .captcha-description,
+      .captcha-purpose {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 1rem;
+      }
+      #captcha-canvas {
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+      }
+      .button-group {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+      button {
+        flex: 1;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button[type='button'] {
+        background-color: #f0f0f0;
+        color: #333;
+      }
+      button[type='button']:hover {
+        background-color: #e0e0e0;
+      }
+      button[type='submit'] {
+        background-color: #4caf50;
+        color: white;
+      }
+      button[type='submit']:hover {
+        background-color: #45a049;
+      }
+      #audio-captcha {
+        width: 100%;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>CAPTCHA 확인</h2>
+      <form onsubmit="return validateCaptcha(event)">
+        <p id="captcha-purpose" class="captcha-purpose">
+          이 CAPTCHA는 실제 사용자가 폼을 작성하고 있는지 확인하기 위한
+          보안 절차입니다. 이는 자동화된 봇으로부터 웹사이트를 보호하고
+          스팸을 방지하는 데 도움이 됩니다.
+        </p>
+        <p id="captcha-description" class="captcha-description">
+          아래 이미지에 표시된 문자를 입력하세요. 시각 장애가 있거나
+          이미지를 보기 어려운 경우, 오디오 CAPTCHA를 이용할 수 있습니다.
+        </p>
+        <canvas
+          id="captcha-canvas"
+          width="200"
+          height="50"
+          aria-label="시각적 CAPTCHA"
+          role="img"
+        ></canvas>
+        <div class="button-group">
+          <button
+            type="button"
+            onclick="refreshCaptcha()"
+            aria-label="새로운 시각적 CAPTCHA 생성"
+          >
+            새로운 CAPTCHA 생성
+          </button>
+          <button
+            type="button"
+            onclick="toggleAudioCaptcha()"
+            aria-label="오디오 CAPTCHA 재생 또는 중지"
+          >
+            오디오 CAPTCHA 재생 및 중지
+          </button>
+        </div>
+        <audio id="audio-captcha" style="display: none">
+          <source src="audio-captcha.mp3" type="audio/mpeg" />
+          <source src="audio-captcha.ogg" type="audio/ogg" />
+          오디오 CAPTCHA를 지원하지 않는 브라우저입니다.
+        </audio>
+        <label for="captcha">CAPTCHA 입력:</label>
+        <input
+          type="text"
+          id="captcha"
+          name="captcha"
+          required
+          aria-describedby="captcha-purpose captcha-description"
+        />
+        <button type="submit">제출</button>
+      </form>
+    </div>
+    <script>
+      let captchaText = '';
+ 
+      function generateCaptcha() {
+        const canvas = document.getElementById('captcha-canvas');
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+ 
+        captchaText = Math.random()
+          .toString(36)
+          .substring(2, 8)
+          .toUpperCase();
+ 
+        ctx.font = '30px Arial';
+        ctx.fillStyle = '#333';
+        ctx.fillText(captchaText, 40, 40);
+ 
+        // 노이즈 추가
+        for (let i = 0; i < 100; i++) {
+          ctx.fillStyle = `rgba(${Math.random() * 255},${
+            Math.random() * 255
+          },${Math.random() * 255},0.3)`;
+          ctx.fillRect(
+            Math.random() * canvas.width,
+            Math.random() * canvas.height,
+            2,
+            2,
+          );
+        }
+      }
+ 
+      function refreshCaptcha() {
+        generateCaptcha();
+      }
+ 
+      function toggleAudioCaptcha() {
+        const audio = document.getElementById('audio-captcha');
+        if (audio.paused) {
+          audio.style.display = 'block';
+          audio.play();
+        } else {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+      }
+ 
+      function validateCaptcha(event) {
+        event.preventDefault();
+        const input = document.getElementById('captcha').value;
+        if (input.toUpperCase() === captchaText) {
+          alert('CAPTCHA 확인 성공!');
+          refreshCaptcha();
+          document.getElementById('captcha').value = '';
+        } else {
+          alert('CAPTCHA가 일치하지 않습니다. 다시 시도해주세요.');
+        }
+      }
+ 
+      // 초기 CAPTCHA 생성
+      generateCaptcha();
+    </script>
+  </body>
+</html>
