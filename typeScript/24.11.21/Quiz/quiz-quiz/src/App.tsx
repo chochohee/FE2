@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import { QuizConfig, QuizQuestion } from "./types/quiz";
+import { QuizConfig, QuizQuestion, QuizSummary } from "./types/quiz";
 import QuizSetup from "./components/QuizSetup.tsx";
 import { useState } from "react";
 import QuizGame from "./components/QuizGame.tsx";
+import QuizResult from "./components/QuizResult.tsx";
 
 enum QuizStep {
   SETUP,
@@ -13,6 +14,7 @@ enum QuizStep {
 function App() {
   const [step, setStep] = useState<QuizStep>(QuizStep.SETUP);
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
+  const [result, setResult] = useState<QuizSummary | null>(null);
 
   const startQuiz = async (config: QuizConfig) => {
     try {
@@ -31,10 +33,22 @@ function App() {
       const data = await response.json();
 
       setQuestions(data.results);
-      setStep(QuizStep.PLAYING)
+      setStep(QuizStep.PLAYING);
     } catch (error: unknown) {
       throw new Error((error as Error).message);
     }
+  };
+
+  // 퀴즈 완료시 결과를 저장하고, 결과 화면으로 전환하는 함수
+  const completeQuiz = (quizResult: QuizSummary) => {
+    setResult(quizResult);
+    setStep(QuizStep.RESULT);
+  };
+
+  const restartQuiz = () => {
+    setQuestions([]);
+    setResult(null);
+    setStep(QuizStep.SETUP);
   };
 
   return (
@@ -44,8 +58,12 @@ function App() {
       </header>
       <main>
         {step === QuizStep.SETUP && <QuizSetup onStart={startQuiz} />}
-        {step === QuizStep.PLAYING && <QuizGame questions={questions} />}
-
+        {step === QuizStep.PLAYING && (
+          <QuizGame questions={questions} onComplete={completeQuiz} />
+        )}
+        {step === QuizStep.RESULT && result && (
+          <QuizResult result={result} onRestart={restartQuiz} />
+        )}
       </main>
     </AppContainer>
   );
