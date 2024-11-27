@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, Timestamp } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
@@ -20,4 +20,6 @@ const appFireStore = getFirestore(app);
 
 const appAuth = getAuth();
 
-export { app, appFireStore, appAuth };
+const timeStamp = Timestamp;
+
+export { app, appFireStore, appAuth, timeStamp };

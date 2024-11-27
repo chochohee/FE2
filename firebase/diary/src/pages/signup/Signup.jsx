@@ -197,7 +197,7 @@ export default function Signup() {
             required
             onChange={handleData}
             value={password}
-            autoComplete="currnet-password"
+            autoComplete="current-password"
           />
 
           <label className="label-style" htmlFor="user-nickname">
